@@ -14,7 +14,7 @@ Create a new a folder then
 ```sh
 mkdir new-project
 cd new-project
-curl -fsSL https://github.com/lalunastudio/babel-node-server/archive/1.0.0.tar.gz | tar -xz --strip-components=1 babel-node-server
+curl -fsSL https://github.com/lalunastudio/babel-node-server/archive/1.0.0.tar.gz | tar -xz --strip-components=1
 yarn
 yarn init
 ```
@@ -30,8 +30,11 @@ yarn init
 
 or
 
-- yarn run build
-- yarn run serve
+```sh
+yarn run build
+yarn run serve
+```
+
 
 ## Author
 
