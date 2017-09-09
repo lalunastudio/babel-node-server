@@ -1,0 +1,28 @@
+{
+  "name": "babel-node-server",
+  "version": "1.0.0",
+  "description": "Example Node Server w/ Babel, Eslint and Flow",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node --presets es2015,stage-2",
+    "build": "babel src -d dist",
+    "serve": "node dist/index.js",
+    "test": "mocha --compilers js:babel-register"
+  },
+  "author": "Peter Nielsen <peter@laluna.io>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.11.0",
+    "babel-register": "^6.11.6",
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-flowtype": "^2.35.1",
+    "eslint-plugin-import": "^2.7.0",
+    "flow-bin": "^0.54.1",
+    "mocha": "^3.0.1",
+    "nodemon": "^1.10.0"
+  }
+}

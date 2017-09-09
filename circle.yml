@@ -1,0 +1,25 @@
+dependencies:
+  cache_directories:
+    - "node_modules"
+    - "~/.npm"
+  override:
+    - npm install
+
+deployment:
+  production:
+    branch: master
+    commands:
+      # Prevent CircleCi from shallow cloning the project: https://discuss.circleci.com/t/git-errors-failing-the-build-when-deploying-to-heroku/776/2
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+      - git remote add dokku dokku@production-server.com:node-app-name
+      - git push dokku master:
+          timeout: 3000
+
+  develop:
+    branch: develop
+    commands:
+      # Prevent CircleCi from shallow cloning the project: https://discuss.circleci.com/t/git-errors-failing-the-build-when-deploying-to-heroku/776/2
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+      - git remote add dokku dokku@developer-server.com:node-app-name
+      - git push dokku develop:master:
+          timeout: 3000
