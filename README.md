@@ -27,7 +27,9 @@ yarn init
 ## Deploying
 
 - Setup Dokku and server, change URLs in Circle CI files and push to github 
+
 or
+
 - yarn run build
 - yarn run serve
 
